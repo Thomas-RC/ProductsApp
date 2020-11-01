@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">ProductsApp</string>
+    <string name="text_label_main">Home</string>
+    <string name="text_label_login">Zaloguj</string>
+    <string name="text_label_register">Rejestracja</string>
+    <string name="desc_value">Aplikacja umożliwi Ci zarządzanie swoją ofertą produktową ze swojego telefonu.</string>
+    <string name="desc_value_2">Załóz 1-szy sklep internetowy i dołącz do grona handlowców online.</string>
+    <string name="button_login">Zaloguj</string>
+    <string name="hint_password">Hasło</string>
+    <string name="hint_email">Adres Email</string>
+    <string name="text_logo">ProductsApp</string>
+    <string name="image_logo">Products app logo</string>
+    <string name="hint_name">Imię</string>
+    <string name="hint_confirm_password">Powtórz hasło</string>
+    <string name="button_register">Rejestracja</string>
+    <string name="btn_logowanie">Logowanie</string>
+    <string name="btn_rejestracja">Rejestracja</string>
+</resources>

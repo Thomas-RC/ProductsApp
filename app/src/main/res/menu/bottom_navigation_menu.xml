@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/page_main"
+        android:enabled="true"
+        android:icon="@drawable/ic_outline_home_24"
+        android:title="@string/text_label_main"/>
+    <item
+        android:id="@+id/page_login"
+        android:enabled="true"
+        android:icon="@drawable/ic_outline_account_box_24"
+        android:title="@string/text_label_login"/>
+    <item
+        android:id="@+id/page_register"
+        android:enabled="true"
+        android:icon="@drawable/ic_outline_group_add_24"
+        android:title="@string/text_label_register"/>
+</menu>
