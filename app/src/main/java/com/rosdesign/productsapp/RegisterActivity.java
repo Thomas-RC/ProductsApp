@@ -116,15 +116,16 @@ public class RegisterActivity extends Base
                     @Override
                     protected Map<String, String> getParams() throws AuthFailureError
                     {
-                        Map<String, String> parameters = new HashMap<>();
-                        parameters.put("Content-Type", "application/json");
-                        parameters.put("name", textName.getText().toString());
-                        parameters.put("email", textEmail.getText().toString());
-                        parameters.put("password", textPassword.getText().toString());
-                        parameters.put("c_password", textConfirmPassword.getText().toString());
-                        Log.d("getParams", String.valueOf(parameters));
-                        return parameters;
+                        Map<String, String> params = new HashMap<>();
+                        params.put("Content-Type", "application/json");
+                        params.put("name", textName.getText().toString());
+                        params.put("email", textEmail.getText().toString());
+                        params.put("password", textPassword.getText().toString());
+                        params.put("c_password", textConfirmPassword.getText().toString());
+                        Log.d("getParams", String.valueOf(params));
+                        return params;
                     }
+
                 };
 
                 /*

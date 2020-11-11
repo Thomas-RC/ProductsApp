@@ -16,7 +16,7 @@
         app:srcCompat="@mipmap/background" />
 
     <ImageView
-        android:id="@+id/imageViewLogoRegister"
+        android:id="@+id/imageViewLogoLogin"
         android:layout_width="74dp"
         android:layout_height="67dp"
         android:layout_marginTop="32dp"
@@ -27,7 +27,7 @@
         app:srcCompat="@drawable/ic_twotone_shopping_cart_24" />
 
     <TextView
-        android:id="@+id/textViewLogoRegister"
+        android:id="@+id/textViewLogoLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/arsenal"
@@ -36,10 +36,10 @@
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewLogoRegister" />
+        app:layout_constraintTop_toBottomOf="@+id/imageViewLogoLogin" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout2"
+        android:id="@+id/textInputLayoutEmailLogin"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -59,12 +59,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/hint_email"
-            android:id="@+id/text_email_register"/>
+            android:id="@+id/text_email_login"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
+        android:id="@+id/textInputLayoutPasswordLogin"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -72,7 +72,7 @@
         android:layout_marginEnd="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutEmailLogin"
         app:startIconDrawable="@drawable/ic_outline_vpn_key_24"
         app:endIconMode="password_toggle"
         app:helperText="Wprowadź hasło"
@@ -83,12 +83,12 @@
             android:layout_height="wrap_content"
             android:hint="@string/hint_password"
             android:inputType="textPassword"
-            android:id="@+id/text_password_register"/>
+            android:id="@+id/text_password_login"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/button_login"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -97,7 +97,7 @@
         android:text="@string/button_login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPasswordLogin" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"

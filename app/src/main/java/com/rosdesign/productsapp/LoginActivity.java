@@ -16,7 +16,6 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -40,15 +39,18 @@ public class LoginActivity extends Base
         /*
         * Inicjalizacja zmiennych dla pól i przycisku formularza oraz menu dolnego
         * */
-        layoutEmail = findViewById(R.id.textInputLayout2);
-        layoutPassword = findViewById(R.id.textInputLayout);
-        textEmail = findViewById(R.id.text_email_register);
-        textPassword = findViewById(R.id.text_password_register);
-        loginButton = findViewById(R.id.button2);
+        layoutEmail = findViewById(R.id.textInputLayoutEmailLogin);
+        layoutPassword = findViewById(R.id.textInputLayoutPasswordLogin);
+        textEmail = findViewById(R.id.text_email_login);
+        textPassword = findViewById(R.id.text_password_login);
+        loginButton = findViewById(R.id.button_login);
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.page_login);
 
+        /*
+         * Wywołanie metody menu dolnego
+         * */
         setBottomNavigationView();
 
         /*
