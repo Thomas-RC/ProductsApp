@@ -15,4 +15,6 @@
     <string name="button_register">Rejestracja</string>
     <string name="btn_logowanie">Logowanie</string>
     <string name="btn_rejestracja">Rejestracja</string>
+    <string name="text_label_logout">Wyloguj</string>
+    <string name="text_label_info">Informacje</string>
 </resources>

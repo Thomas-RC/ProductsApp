@@ -1,6 +1,8 @@
 package com.rosdesign.productsapp;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -61,7 +63,7 @@ public class LoginActivity extends Base
     }
 
     /**
-     * Metoda wykorzystuje bibliotekę Volley. Volley to biblioteka HTTP, która ułatwia i, co najważniejsze, przyspiesza tworzenie sieci dla aplikacji na Androida.
+     * Metoda wykorzystuje bibliotekę Volley. Volley to biblioteka HTTP, która przyspiesza tworzenie sieci dla aplikacji na Androida.
      */
     public void loginApp()
     {
@@ -80,7 +82,7 @@ public class LoginActivity extends Base
                     public void onResponse(String s)
                     {
                         /*
-                         * Tworzę logi w logcat do sprawdzenia poprawności wprowadzanych danych
+                         * Tworzę logi w logcat do sprawdzenia poprawności zwracanych danych
                          */
                         Log.d("Moje string", s);
 
@@ -96,8 +98,16 @@ public class LoginActivity extends Base
                             JSONObject obj = new JSONObject(s);
                             if (obj.getBoolean("success"))
                             {
+
                                 Toast.makeText(LoginActivity.this, "Zalogowano poprawnie", Toast.LENGTH_LONG).show();
+
+                                JSONObject userJson = obj.getJSONObject("data");
+                                User user = new User(userJson.getString("token"));
+                                Session.getInstance(getApplicationContext()).userLogin(user);
+                                finish();
+
                                 startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+
                             } else
                             {
                                 Toast.makeText(LoginActivity.this, "Niepoprawne dane logowania", Toast.LENGTH_LONG).show();
