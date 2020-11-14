@@ -16,5 +16,9 @@
     <string name="btn_logowanie">Logowanie</string>
     <string name="btn_rejestracja">Rejestracja</string>
     <string name="text_label_logout">Wyloguj</string>
-    <string name="text_label_info">Informacje</string>
+    <string name="text_label_info">Dodaj produkt</string>
+    <string name="button_add_product">Dodaj produkt</string>
+    <string name="hint_name_add_product">Nazwa produktu</string>
+    <string name="hint_price_add_product">Cena brutto produktu</string>
+    <string name="hint_desc_add_product">Opis produktu</string>
 </resources>

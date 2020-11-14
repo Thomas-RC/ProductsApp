@@ -1,5 +1,8 @@
 package com.rosdesign.productsapp;
 
+/**
+ * Tworzenie modelu produktu zgodnego z danymi z restAPI
+ */
 public class Product
 {
     private int id;
@@ -8,22 +11,6 @@ public class Product
 
     public Product()
     {
-    }
-
-    public Product(String name, String desc)
-    {
-        this.name = name;
-        this.desc = desc;
-    }
-
-    public Product(int id, String name, String desc, String price, String created_at, String updated_at)
-    {
-        this.id = id;
-        this.name = name;
-        this.desc = desc;
-        this.price = price;
-        this.created_at = created_at;
-        this.updated_at = updated_at;
     }
 
     public int getId()

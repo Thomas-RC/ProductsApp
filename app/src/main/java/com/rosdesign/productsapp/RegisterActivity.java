@@ -22,6 +22,9 @@ import java.util.Map;
 
 public class RegisterActivity extends Base
 {
+    /**
+     * Inicjalizacja zmiennych
+     */
     TextInputLayout layoutName, layoutEmail, layoutPassword, layoutConfirmPassword;
     TextInputEditText textName, textEmail, textPassword, textConfirmPassword;
     Button registerButton;
@@ -33,13 +36,16 @@ public class RegisterActivity extends Base
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        layoutName = findViewById(R.id.textInputLayoutNameRegister);
+        /**
+         * Deklaracja zmiennych z widoku
+         */
+        layoutName = findViewById(R.id.textInputLayoutNameProduct);
         layoutEmail = findViewById(R.id.textInputLayoutEmailRegister);
         layoutPassword = findViewById(R.id.textInputLayoutPasswordRegister);
         layoutConfirmPassword = findViewById(R.id.textInputLayoutConfirmPasswordRegister);
         registerButton = findViewById(R.id.button_register);
 
-        textName = findViewById(R.id.text_name_register);
+        textName = findViewById(R.id.text_name_product);
         textEmail = findViewById(R.id.text_email_register);
         textPassword = findViewById(R.id.text_password_register);
         textConfirmPassword = findViewById(R.id.text_confirm_password_register);
@@ -51,6 +57,9 @@ public class RegisterActivity extends Base
         registerApp();
     }
 
+    /**
+     * Tworzenie uzytkownika w systemie
+     */
     public void registerApp()
     {
         registerButton.setOnClickListener(new View.OnClickListener()

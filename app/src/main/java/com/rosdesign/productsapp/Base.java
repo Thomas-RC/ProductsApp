@@ -1,7 +1,5 @@
 package com.rosdesign.productsapp;
 
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.util.Log;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,9 +9,21 @@ import com.google.android.material.textfield.TextInputLayout;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+
+/**
+ * Główna klasa Activity po niej dziedzicza wszystkie Activity aplikacji
+ *
+ */
 public class Base extends AppCompatActivity
 {
 
+    /**
+     * Obsługa błędów z API z wykorzystaniem Volley: https://developer.android.com/training/volley/request-custom#java
+     * @param volleyError
+     * @param arrayInput
+     * @param nameBox
+     * @param context
+     */
     public void networkErrorResponse(VolleyError volleyError, String[] arrayInput, TextInputLayout[] nameBox, Base context)
     {
         String jsonError = "";

@@ -102,8 +102,12 @@ public class LoginActivity extends Base
                                 Toast.makeText(LoginActivity.this, "Zalogowano poprawnie", Toast.LENGTH_LONG).show();
 
                                 JSONObject userJson = obj.getJSONObject("data");
-                                User user = new User(userJson.getString("token"));
-                                Session.getInstance(getApplicationContext()).userLogin(user);
+                                User user = new User(
+                                        userJson.getString("name"),
+                                        userJson.getString("token"));
+                                Session.getInstance(LoginActivity.this).userLogin(user);
+                                Log.d("UserName: ",userJson.getString("name"));
+
                                 finish();
 
                                 startActivity(new Intent(LoginActivity.this, HomeActivity.class));

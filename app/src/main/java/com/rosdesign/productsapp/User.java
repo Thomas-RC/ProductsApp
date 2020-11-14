@@ -1,36 +1,22 @@
 package com.rosdesign.productsapp;
 
+/**
+ * Tworzenie modelu uzytkownika zgodnego z danymi z restAPI
+ */
 public class User
 {
 
-    private int id;
     private String name, token;
-
-    public User()
-    {
-    }
 
     public User(String token)
     {
         this.token = token;
     }
 
-    public User(int id, String name, String token)
+    public User(String name, String token)
     {
-        this.id = id;
         this.name = name;
         this.token = token;
-    }
-
-
-    public int getId()
-    {
-        return id;
-    }
-
-    public void setId(int id)
-    {
-        this.id = id;
     }
 
     public String getName()

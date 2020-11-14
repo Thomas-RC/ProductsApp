@@ -12,6 +12,6 @@
     <item
         android:id="@+id/page_info_home"
         android:enabled="true"
-        android:icon="@drawable/ic_outline_group_add_24"
+        android:icon="@drawable/ic_baseline_add_shopping_cart_24"
         android:title="@string/text_label_info"/>
 </menu>
