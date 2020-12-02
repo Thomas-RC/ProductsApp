@@ -12,9 +12,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.android.volley.*;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.textfield.TextInputEditText;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -97,7 +96,7 @@ public class HomeActivity extends Base
         /* Wywołanie request do API zgodnie z dokumentacją Android:
          * https://developer.android.com/training/volley/simple
          */
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, ConfigsApp.PRODUCTS, null, new Response.Listener<JSONObject>()
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, ConfigsApp.USER, null, new Response.Listener<JSONObject>()
         {
             @Override
             public void onResponse(JSONObject r)

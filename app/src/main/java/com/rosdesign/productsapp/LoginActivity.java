@@ -11,6 +11,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import android.os.Bundle;
 import com.android.volley.*;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -73,18 +74,23 @@ public class LoginActivity extends Base
             public void onClick(View v)
             {
 
+                Map<String, String> parameters = new HashMap<>();
+                parameters.put("email", textEmail.getText().toString());
+                parameters.put("password", textPassword.getText().toString());
+                JSONObject jsonObj = new JSONObject(parameters);
+
                 /* Wywołanie request do API zgodnie z dokumentacją Android:
                  * https://developer.android.com/training/volley/simple
                  */
-                StringRequest request = new StringRequest(Request.Method.POST, ConfigsApp.LOGIN, new Response.Listener<String>()
+                JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, ConfigsApp.LOGIN, jsonObj, new Response.Listener<JSONObject>()
                 {
                     @Override
-                    public void onResponse(String s)
+                    public void onResponse(JSONObject r)
                     {
                         /*
                          * Tworzę logi w logcat do sprawdzenia poprawności zwracanych danych
                          */
-                        Log.d("Moje string", s);
+                        Log.d("Moje string", String.valueOf(r));
 
                         /*
                          * RestAPI zwraca dane w postaci JSON
@@ -95,18 +101,17 @@ public class LoginActivity extends Base
                          */
                         try
                         {
-                            JSONObject obj = new JSONObject(s);
-                            if (obj.getBoolean("success"))
+                            if (r.getBoolean("success"))
                             {
 
                                 Toast.makeText(LoginActivity.this, "Zalogowano poprawnie", Toast.LENGTH_LONG).show();
 
-                                JSONObject userJson = obj.getJSONObject("data");
+                                JSONObject userJson = r.getJSONObject("data");
                                 User user = new User(
-                                        userJson.getString("name"),
+                                        userJson.getString("user_name"),
                                         userJson.getString("token"));
                                 Session.getInstance(LoginActivity.this).userLogin(user);
-                                Log.d("UserName: ",userJson.getString("name"));
+                                Log.d("UserName: ",userJson.getString("user_name"));
 
                                 finish();
 
@@ -129,26 +134,21 @@ public class LoginActivity extends Base
                     * */
                     @Override
                     public void onErrorResponse(VolleyError error)
-                    {
+                    {Log.d("error", String.valueOf(error));
                         String[] arrInput = {"email","password","error"};
                         TextInputLayout[] editText = {layoutEmail, layoutPassword};
                         LoginActivity.this.networkErrorResponse(error, arrInput, editText, LoginActivity.this);
                     }
                 })
                 {
-                    /**
-                     * Nadpisanie metody getParams klasy StringRequest w celu zmapowania argumentów i nagłówków z formularza
-                     */
-                    @Override
-                    protected Map<String, String> getParams() throws AuthFailureError
+
+                    public Map<String, String> getHeaders()
                     {
-                        Map<String, String> parameters = new HashMap<>();
-                        parameters.put("Content-Type", "application/json");
-                        parameters.put("email", textEmail.getText().toString());
-                        parameters.put("password", textPassword.getText().toString());
-                        Log.d("getParams", String.valueOf(parameters));
+                        Map<String, String> parameters = new HashMap<String, String>();
+                        parameters.put("Content-Type", "application/json; charset=utf-8");
                         return parameters;
                     }
+
                 };
 
                 /*

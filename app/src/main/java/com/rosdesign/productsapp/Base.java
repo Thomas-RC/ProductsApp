@@ -36,7 +36,7 @@ public class Base extends AppCompatActivity
             try
             {
                 JSONObject objErr = new JSONObject(jsonError);
-                JSONObject dataErr = objErr.getJSONObject("data");
+                JSONObject dataErr = objErr.getJSONObject("message");
 
                 for (int i=0;i<=arrayInput.length;i++)
                 {
